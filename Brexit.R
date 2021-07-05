@@ -7,3 +7,4 @@ sum(X)/10000
 
 june_polls <- brexit_polls %>% filter(enddate >= "2016-06-01") %>% mutate(se_x_hat = sqrt(x_hat * (1 - x_hat )/samplesize),
                                                                           spread_sd = 2 * se_x_hat, lower = spread - qnorm(.975)*spread_sd, upper = spread + qnorm(.975) * spread_sd, hit = (spread > lower & spread < upper))
+print(june_polls)
